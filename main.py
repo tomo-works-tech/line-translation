@@ -82,7 +82,7 @@ def handle_message(event):
 
 def generate_content(input_text: str) -> str:        
     response = client.models.generate_content(
-        model="gemini-2.5-flash-lite",
+        model="gemini-3.1-flash-lite-preview",
         config=types.GenerateContentConfig(
             system_instruction="If the user's input is in Japanese, translate it into natural English. If the user's input is in English, translate it into natural Japanese. "
             "Do not provide alternatives. "
