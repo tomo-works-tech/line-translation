@@ -7,8 +7,9 @@ wheels/
 *.egg-info
 
 # Virtual environments
-.venv
-.env
-.json
-.lock
-.jsonc
+*.venv
+*.env
+*.json
+*.lock
+*.jsonc
+*.gitignore
