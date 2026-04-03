@@ -1,0 +1,66 @@
+// グループトークでユーザーからメンションと絵文字を含むテキストメッセージが送られた場合
+{
+  //宛先のbot
+  "destination": "xxxxxxxxxx",
+  "events": [
+    {
+      //返送のためのトークン
+      "replyToken": "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
+      "type": "message",
+      "mode": "active",
+      //イベントの時間
+      "timestamp": 1462629479859,
+      //イベントの送信元
+      "source": {
+        "type": "group",
+        //送信元グループID
+        "groupId": "Ca56f94637c...",
+        //送信元ユーザーID
+        "userId": "U4af4980629..."
+      },
+      //webhookイベントのID
+      "webhookEventId": "01FZ74A0TDDPYRVKNK77XKC3ZR",
+      //イベントが再送されたものかどうか
+      "deliveryContext": {
+        "isRedelivery": false
+      },
+      "message": {
+        //メッセージID
+        "id": "444573844083572737",
+        "type": "text",
+        //引用するためのトークン
+        "quoteToken": "q3Plxr4AgKd...",
+        //既読にするためのトークン
+        "markAsReadToken": "30yhdy232...",
+        //送られてきたテキスト
+        "text": "@All @example Good Morning!! (love)",
+        //LINE固有の絵文字ID
+        "emojis": [
+          {
+            "index": 29,
+            "length": 6,
+            "productId": "5ac1bfd5040ab15980c9b435",
+            "emojiId": "001"
+          }
+        ],
+        //メンション先の情報
+        "mention": {
+          "mentionees": [
+            {
+              "index": 0,
+              "length": 4,
+              "type": "all"
+            },
+            {
+              "index": 5,
+              "length": 8,
+              "userId": "U49585cd0d5...",
+              "type": "user",
+              "isSelf": false
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

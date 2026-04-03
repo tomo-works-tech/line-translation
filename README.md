@@ -1,0 +1,1 @@
+LineのGemini APIを用いた翻訳bot
