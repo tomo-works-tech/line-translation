@@ -13,5 +13,4 @@ test.py
 *.json
 *.lock
 *.jsonc
-*.gitignore
 *.DS_Store

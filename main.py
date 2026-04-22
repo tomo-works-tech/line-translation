@@ -27,6 +27,7 @@ from google.cloud import firestore
 from google.api_core.exceptions import AlreadyExists
 from google.oauth2 import id_token
 from google.auth.transport import requests as google_auth_requests
+from google.auth import exceptions
 # --- その他 ---        
 import dotenv          
 
@@ -46,8 +47,6 @@ db = firestore.Client(project=os.getenv("PROJECT_ID"))
 cloud_tasks_client = tasks_v2.CloudTasksClient()
 auth_request = google_auth_requests.Request()
 
-import logging
-app.logger.setLevel(logging.INFO)
 def verify_oidc_token():
     auth_header = request.headers.get("Authorization")
     if not auth_header:
@@ -62,7 +61,7 @@ def verify_oidc_token():
                 auth_request,
                 audience=EXPECTED_AUDIENCE,
             )
-        except ValueError as e:
+        except exceptions.GoogleAuthError as e:
             app.logger.warning(f"Invalid OIDC token: {e}")
             abort(401)
         if not claims.get("email_verified"):
